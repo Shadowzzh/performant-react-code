@@ -1,0 +1,21 @@
+body[theme='dark'] {
+  --bg: #242424;
+  --color: #eee;
+  --color-hover: #242424;
+  --color-card: #242424;
+  --color-card-hover: #eee;
+  --bg-hover: #242424;
+  --bg-card: #eee;
+  --bg-card-hover: #242424;
+  --button: #1a1a1a;
+}
+
+body[theme='light'] {
+  --bg: #fff;
+  --color: #242424;
+  --color-card: #eee;
+  --color-card-hover: #242424;
+  --bg-card: #242424;
+  --bg-card-hover: #eee;
+  --button: #242424;
+}
