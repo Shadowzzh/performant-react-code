@@ -4,15 +4,30 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite && eslint",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "eslint": "^8.23.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --parser=typescript --write src/**/*.{js,jsx,tsx,ts}",
+      "eslint src/**/*.{js,jsx,tsx,ts} --fix --cache --no-error-on-unmatched-pattern",
+      "git add"
+    ],
+    "*.{less,css}": [
+      "prettier --write src/**/*.{less,css}",
+      "stylelint --fix --allow-empty-input",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
@@ -22,8 +37,9 @@
     "eslint-plugin-jest": "^26.5.3",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "lint-staged": "^10.0.7",
     "react-is": ">= 16.8.0",
-    "typescript": "^4.6.4",
+    "typescript": "^4.8.2",
     "vite": "^3.0.7"
   },
   "main": "vite.config.ts.js",
